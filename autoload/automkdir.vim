@@ -16,7 +16,11 @@ function! automkdir#mkdir(dir, force) abort
 endfunction
 
 function! s:should_mkdir(dir) abort
-  return s:related_to_file(&l:buftype) && !isdirectory(a:dir)
+  return s:related_to_file(&l:buftype) && !isdirectory(a:dir) && !s:is_fugitive_artifact(a:dir)
+endfunction
+
+function! s:is_fugitive_artifact(dir) abort
+  return a:dir =~ "^fugitive://"
 endfunction
 
 " :h E676
