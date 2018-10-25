@@ -20,7 +20,7 @@ function! s:should_mkdir(dir) abort
 endfunction
 
 function! s:is_fugitive_artifact(dir) abort
-  return a:dir =~ "^fugitive://"
+  return a:dir =~# "^fugitive://"
 endfunction
 
 " :h E676
