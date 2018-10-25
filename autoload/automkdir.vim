@@ -30,7 +30,7 @@ function! s:related_to_file(buftype) abort
 endfunction
 
 function! s:confirm(dir) abort
-  return input(printf('Directory "%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$'
+  return input(printf('Directory "%s" does not exist. Create? [y/N] ', a:dir)) =~? '^y\%[es]$'
 endfunction
 
 let &cpo = s:save_cpo
